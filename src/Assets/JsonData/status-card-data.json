@@ -1,0 +1,21 @@
+[{
+        "icon": "bx bx-user-pin",
+        "count": "659",
+        "title": "Total Customers"
+    },
+    {
+        "icon": "bx bx-clinic",
+        "count": "60",
+        "title": "Total Hospitals"
+    },
+    {
+        "icon": "bx bx-conversation",
+        "count": "77",
+        "title": "Total Meetings"
+    },
+    {
+        "icon": "bx bx-user-circle",
+        "count": "133",
+        "title": "Total Doctors"
+    }
+]
