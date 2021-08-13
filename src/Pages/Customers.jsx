@@ -4,7 +4,16 @@ import "./style.css";
 const Customers = () => {
   return (
     <div>
-      <h1>Hi Customers</h1>
+      <h1 className = "page-header">
+        Customers
+      </h1>
+      <div className="row">
+        <div className="col-12">
+          <div className="card">
+           
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import user_image from "../../Assets/images/tuat.jpg";
 
 import user_menu from "../../Assets/JsonData/user_menus.json";
+import Theme__menu from "../Themes_Menu/Theme__menu";
 
 const renderNotiicationItem = (item, index) => (
   <div className="notifications-item" key={index}>
@@ -65,8 +66,7 @@ const TopNav = () => {
           {/*  dropdown here */}
         </div>
         <div className="topnav__right-item">
-          <DropDown />
-          {/*  Theme setting */}
+          <Theme__menu />
         </div>
       </div>
     </div>
