@@ -1,0 +1,29 @@
+.table-wrapper {
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 400px;
+    border-spacing: 0;
+}
+
+th {
+    background-color: var(--second-bg);
+}
+
+table tbody tr {
+    text-align: left;
+}
+
+th,
+td {
+    text-transform: capitalize;
+    padding: 15px 10px;
+}
+
+table .tb-body tr:hover {
+    padding: 10px;
+    background-color: var(--main-color);
+    color: var(--txt-white);
+}

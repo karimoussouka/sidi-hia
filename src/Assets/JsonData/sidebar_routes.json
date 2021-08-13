@@ -10,7 +10,7 @@
     },
     {
         "display_name": "Meetings",
-        "route": "/meetings",
+        "route": "/Login",
         "icon": "bx bx-conversation"
     },
     {
