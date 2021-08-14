@@ -1,40 +1,31 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import "./Layout.css";
 import SideBar from "../SideBar/SideBar";
 import TopNav from "../TopNav/TopNav";
 import Routes from "../Routes";
 import { BrowserRouter, Route } from "react-router-dom";
-import { useSelector , useDispatch } from "react-redux";
-import ThemeAction from '../../Redux/Actions/ThemeAction'
-
+import { useSelector, useDispatch } from "react-redux";
+import ThemeAction from "../../Redux/Actions/ThemeAction";
 
 const Layout = () => {
+  const themeReducer = useSelector((state) => state.ThemeReducer);
 
-  const themeReducer = useSelector(state => state.ThemeReducer)
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  useEffect(() => {
+    const themeClass = localStorage.getItem("themeMode", "theme-mode-light");
+    const colorClass = localStorage.getItem("colorMode", "theme-mode-light");
 
-  useEffect(() =>{
-    const themeClass = localStorage.getItem('themeMode' , 'theme-mode-light');
-    const colorClass = localStorage.getItem('colorMode' , 'color-mode-light');
+    dispatch(ThemeAction.setMode(themeClass));
 
-    dispatch(ThemeAction.setMode(themeClass))
-
-    dispatch(ThemeAction.setColor(colorClass))
-
-    console.log('====================================');
-    console.log(themeReducer.mode);
-    console.log('====================================');
-    console.log('====================================');
-    console.log(themeReducer.color);
-    console.log('====================================');
-  },[dispatch])
+    dispatch(ThemeAction.setColor(colorClass));
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Route
         render={(props) => (
-          <div className={`layout ${themeReducer.mode}`}>
+          <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
             <SideBar {...props} />
             <div className="layout_content">
               <TopNav />
