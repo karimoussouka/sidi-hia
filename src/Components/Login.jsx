@@ -32,6 +32,13 @@ const Button = styled.button`
 `;
 
 const Login = () => {
+  const data = axios
+    .get("https://jsonplaceholder.typicode.com/users")
+    .then((responcse) => {
+      console.log(responcse);
+    });
+  console.log(data);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

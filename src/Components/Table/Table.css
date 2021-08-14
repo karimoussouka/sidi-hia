@@ -10,6 +10,7 @@ table {
 
 th {
     background-color: var(--second-bg);
+    text-align: left;
 }
 
 table tbody tr {
