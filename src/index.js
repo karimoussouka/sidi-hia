@@ -12,7 +12,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 const store = createStore(rootReducer);
-document.title = "Tua CRM";
+document.title = "Skill Team";
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

@@ -5,6 +5,7 @@ import Customers from "../Pages/Customers";
 import Meetings from "../Pages/Meetings";
 import Doctors from "../Pages/Doctors";
 import Hospitals from "../Pages/Hospital";
+import Archive from "./Archive/Archive";
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
       <Route path="/Meetings" component={Meetings} />
       <Route path="/doctors" component={Doctors} />
       <Route path="/hospitals" component={Hospitals} />
+      <Route path="/archive" component={Archive} />
     </Switch>
   );
 };

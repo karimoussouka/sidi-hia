@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Chart from "react-apexcharts";
+import Themeaction from "../Redux/Actions/ThemeAction";
 
+import { useSelector, useDispatch } from "react-redux";
 
 import StatusCard from "../Components/Status-card/StatusCard";
 import statusCards from "../Assets/JsonData/status-card-data.json";
@@ -179,6 +181,13 @@ const renderMeetingsBody = (item, index) => (
 );
 
 const Dashboard = () => {
+  const themeReducer = useSelector((state) => state.ThemeReducer.mode);
+
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(Themeaction.getTheme());
+  // });
   return (
     <div>
       <h2 className="pag-header">Dahsboard</h2>
@@ -199,7 +208,17 @@ const Dashboard = () => {
         <div className="col-6">
           <div className="card full-height">
             <Chart
-              options={chartOptions.options}
+              options={
+                themeReducer === "theme-mode-dark"
+                  ? {
+                      ...chartOptions.options,
+                      theme: { mode: "dark" },
+                    }
+                  : {
+                      ...chartOptions.options,
+                      theme: { mode: "light" },
+                    }
+              }
               series={chartOptions.series}
               type="line"
               height="100%"

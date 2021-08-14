@@ -110,6 +110,9 @@ const Theme__menu = () => {
       >
         <i className="bx bx-palette"></i>
       </button>
+      {/* 
+      
+      */}
       <div ref={menu_ref} className="theme-menu">
         <h4>Theme settings</h4>
         <button onClick={() => closeMenu()} className="theme-menu__close">

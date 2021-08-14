@@ -1,0 +1,31 @@
+.archive-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.archive-card {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.archive-card_status {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.5s ease 0s;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.archive-card_status:hover {
+    background-color: var(--main-color);
+    color: var(--txt-color);
+}

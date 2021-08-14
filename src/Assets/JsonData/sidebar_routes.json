@@ -29,9 +29,9 @@
         "icon": "bx bx-bar-chart-alt"
     },
     {
-        "display_name": "categories",
-        "route": "/categories",
-        "icon": "bx bx-list-ol"
+        "display_name": "Archives",
+        "route": "/archive",
+        "icon": "bx bx-archive"
     },
     {
         "display_name": "discount",
