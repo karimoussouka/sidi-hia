@@ -56,6 +56,6 @@
 }
 
 .mode-list__color.active > i {
-    transition: scale(1);
+    transform: scale(1);
 
 }

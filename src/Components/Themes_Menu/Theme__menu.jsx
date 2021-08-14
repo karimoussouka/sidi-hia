@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import ThemeAction from '../../Redux/Actions/ThemeAction'
 import './Theme__menu.css'
 
 const mode_settings = [
     {
-        id : 'light',
-        name : 'Light',
+        id: 'light',
+        name: 'Light',
         background : 'light-background',
         class : 'theme-mode-light'
     },
@@ -71,18 +73,23 @@ const Theme__menu = () => {
 
     const setActiveMenu = () => menu_ref.current.classList.add('active');
     const closeMenu = () => menu_ref.current.classList.remove('active');
+
     const [currMode, setcurrMode] = useState('light')
     const [currColor, setcurrColor] = useState('blue')
+    const dispatch = useDispatch()
+
 
     const setMode = mode => {
         setcurrMode(mode.id)
         localStorage.setItem('themeMode' , mode.class)
+        dispatch(ThemeAction.setMode(mode.class))
     }
 
     const setColor = color => {
 
         setcurrColor(color.id)
         localStorage.setItem('colorMode' , color.class)
+        dispatch(ThemeAction.setColor(color.class))
     }
 
     useEffect(() => {
@@ -112,9 +119,9 @@ const Theme__menu = () => {
                         <ul className="mode-list">
                             {
                                 mode_settings.map((item, index) =>(
-                                        <li key={index} onClick = {() => setMode(item)}>
+                                        <li key={index} onClick = { () => setMode(item)}>
                                             <div className ={ `mode-list__color ${item.background} ${item.id === currMode ? 'active' : ''}`}>
-                                                <i className="bx bx-check"></i>
+                                                <i className="bx bx-check"></i> 
                                             </div>
                                             <span>{item.name}</span>
                                         </li>
