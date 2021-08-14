@@ -125,7 +125,7 @@ const latestMeetings = {
       clinic: "Touimi",
       date: "13-08-2021",
       time: "15:00-17:00",
-      status: "Meeting Now",
+      status: "Now",
     },
     {
       number: "3",
@@ -160,7 +160,7 @@ const latestMeetings = {
 const meetingsStatus = {
   Pending: "primary",
   Finished: "warning",
-  "Meeting Now": "success",
+  Now: "success",
 };
 
 const renderMeetingsHead = (item, index) => <th key={index}>{item}</th>;

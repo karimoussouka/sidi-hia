@@ -1,16 +1,16 @@
 import React from "react";
 import "./style.css";
 import Table from "../Components/Table/Table";
-import customerList from "../Assets/JsonData/customers-list.json";
+import dcotorsList from "../Assets/JsonData/doctors-list.json";
 
 const customerTableHead = [
   "N°",
-  "cin",
-  "name",
-  "email",
-  "phone",
-  "location",
-  "last Visite",
+  "CIn",
+  "Nane",
+  "Speciality",
+  "Hospital",
+  "Email",
+  "Phone",
 ];
 const renderHead = (item, index) => <th key={index}>{item}</th>;
 const renderBody = (item, index) => (
@@ -18,17 +18,18 @@ const renderBody = (item, index) => (
     <td>{item.number}</td>
     <td>{item.cin}</td>
     <td>{item.name}</td>
+    <td>{item.specialite}</td>
+    <td>{item.hospital}</td>
     <td>{item.email}</td>
     <td>{item.phone}</td>
-    <td>{item.location}</td>
-    <td>{item.lastVisite}</td>
   </tr>
 );
+
 const Customers = () => {
   return (
     <div>
       <div className="page-header">
-        <h2>Customers</h2>
+        <h2>Meetings</h2>
       </div>
 
       <div className="row">
@@ -39,7 +40,7 @@ const Customers = () => {
                 limit="10"
                 headData={customerTableHead}
                 renderHead={(item, index) => renderHead(item, index)}
-                bodyData={customerList}
+                bodyData={dcotorsList}
                 renderBody={(item, index) => renderBody(item, index)}
               />
             </div>
