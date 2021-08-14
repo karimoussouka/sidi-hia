@@ -10,12 +10,12 @@ import Archive from "./Archive/Archive";
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/" exact component={Dashboard} />
-      <Route path="/Customers" component={Customers} />
-      <Route path="/Meetings" component={Meetings} />
-      <Route path="/doctors" component={Doctors} />
-      <Route path="/hospitals" component={Hospitals} />
-      <Route path="/archive" component={Archive} />
+      <Route path="/sidi-hia" exact component={Dashboard} />
+      <Route path="/sidi-hia/Customers" component={Customers} />
+      <Route path="/sidi-hia/Meetings" component={Meetings} />
+      <Route path="/sidi-hia/doctors" component={Doctors} />
+      <Route path="/sidi-hia/hospitals" component={Hospitals} />
+      <Route path="/sidi-hia/archive" component={Archive} />
     </Switch>
   );
 };
