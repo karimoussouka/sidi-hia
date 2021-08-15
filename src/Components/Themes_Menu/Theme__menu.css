@@ -1,21 +1,40 @@
+<<<<<<< HEAD
 
 .theme-menu{
     position: absolute;
     right: -300px;
     display: none;
     top: 0;
+=======
+/* *:not(.badge) {
+    overflow: hidden;
+} */
+
+.theme-menu {
+    background-color: red;
+    position: absolute;
+    top: -1100px;
+>>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
     width: 300px;
-    height:100vh;
-    padding:20px;
-    z-index: 99;
+    right: 30px;
+    z-index: 999;
+    height: max-content;
+    padding: 20px;
+    /* overflow: hidden; */
     background-color: var(--main-bg);
     box-shadow: var(--box-shadow);
-    transition : right .5s var(--transition-cubic);
+    transition: top 1s var(--transition-cubic);
+    border-radius: var(--border-radius);
 }
 
 .theme-menu.active {
+<<<<<<< HEAD
     right : 0;
     display: inline-block;
+=======
+    top: 85px;
+    right: 30px;
+>>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
 }
 
 .theme-menu__close {
@@ -30,19 +49,21 @@
     margin-top: 40px;
 }
 
-.mode-list{
+.mode-list {
     margin-top: 20px;
 }
 
-.mode-list > li {
+.mode-list>li {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.mode-list > li ~ li {
+
+.mode-list>li~li {
     margin-top: 10px;
 }
-.mode-list__color{
+
+.mode-list__color {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -53,12 +74,11 @@
     font-size: 1.5rem;
 }
 
-.mode-list__color > i {
-    transform : scale(0);
-    transition : transform .5s var(--transition-cubic);
+.mode-list__color>i {
+    transform: scale(0);
+    transition: transform 0.5s var(--transition-cubic);
 }
 
-.mode-list__color.active > i {
+.mode-list__color.active>i {
     transform: scale(1);
-
 }

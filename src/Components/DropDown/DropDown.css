@@ -16,6 +16,7 @@
 }
 
 .dropdown__toggle-badge {
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: center;
