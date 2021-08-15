@@ -16,7 +16,7 @@ const Layout = () => {
 
   useEffect(() =>{
     const themeClass = localStorage.getItem('themeMode' , 'theme-mode-light');
-    const colorClass = localStorage.getItem('colorMode' , 'color-mode-light');
+    const colorClass = localStorage.getItem('colorMode' , 'theme-mode-light');
 
     dispatch(ThemeAction.setMode(themeClass))
 
@@ -34,7 +34,7 @@ const Layout = () => {
     <BrowserRouter>
       <Route
         render={(props) => (
-          <div className={`layout ${themeReducer.mode}`}>
+          <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
             <SideBar {...props} />
             <div className="layout_content">
               <TopNav />

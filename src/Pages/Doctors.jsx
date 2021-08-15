@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Table from "../Components/Table/Table";
 import dcotorsList from "../Assets/JsonData/doctors-list.json";
@@ -26,11 +26,18 @@ const renderBody = (item, index) => (
 );
 
 const Customers = () => {
+
+  const [search, setSearch] = useState([]);
+
   return (
     <div>
       <div className="page-header">
-        <h2>Meetings</h2>
+        <h2>Doctors</h2>
       </div>
+      <div className="topnavp__search">
+      <input type="text" placeholder="Search here...." onChange = {e => {setSearch(e.target.value)}} />
+        <i className="bx bx-search"></i>
+    </div>
 
       <div className="row">
         <div className="col-12">

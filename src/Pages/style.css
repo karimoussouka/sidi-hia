@@ -1,3 +1,111 @@
 .dashboard {
     background-color: #991;
 }
+
+.listSuggestion{
+    list-style-type : none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid gray;
+    position: absolute;
+    top: 320px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.listSuggestion li {
+    padding: 10px 5px ;
+    cursor: pointer;
+}
+.listSuggestion li:hover{
+    text-decoration: underline;
+}
+.listSuggestion::before{
+    content:"";
+}
+
+.page-header{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.newCustomer{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.back{
+    font-size: 23px;
+    cursor: pointer;
+}
+.add_cus{
+
+    display: flex;
+    flex-direction: column;
+    left: 30px;
+    
+    
+    align-items: center;
+    height : 100vh;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+}
+.titel{
+    margin-bottom: 25px;
+}
+    .Item{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+        label{
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: gray;
+            
+        }
+        input{
+            height: 20px;
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        .Gender input{
+                margin-top: 15px;
+            }
+            .Gender  label{
+                margin: 10px;
+                font-size: 18px;
+                color: #555;
+            }
+
+    .btnInsert{
+        width: 200px;
+        border: none;
+        background-color: darkblue;
+        color: #fff;
+        padding: 7px 10px;
+        font-weight: 600;
+        border-radius: 10px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+ #searchBy{
+     position: absolute;
+     border-color: transparent;
+     border: none;
+     outline: none;
+     right: 10px;
+ }
+ .topnavp__search{
+     position: relative;
+ }

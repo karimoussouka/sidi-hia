@@ -213,15 +213,26 @@ const Dashboard = () => {
               <h3>Top Customers</h3>
             </div>
             <div className="card__body">
-              <Table
+
+            <table>
+              <th>N°</th>
+              <th>Customer</th>
+              <th>Total visites</th>
+              <th>Last visite</th>
+              <tr>
+                <td></td>
+              </tr>
+            </table>
+            {/*  <Table
                 headData={topCustomersHead.head}
                 renderHead={(item, index) => renderCostumersHead(item, index)}
                 bodyData={topCustomers.body}
                 renderBody={(item, index) => renderCostumersBody(item, index)}
               />
+            */}
             </div>
             <div className="card__footer">
-              <Link to="/">View all</Link>
+              <Link to="/customers">View all</Link>
             </div>
           </div>
         </div>
@@ -231,12 +242,20 @@ const Dashboard = () => {
               <h3>Latest Meetings</h3>
             </div>
             <div className="card__body">
-              <Table
+            <table>
+              <th>N°</th>
+              <th>Customer</th>
+              <th>Total visites</th>
+              <th>Last visite</th>
+              
+            </table>
+            { /*  <Table
                 headData={latestMeetings.head}
                 renderHead={(item, index) => renderMeetingsHead(item, index)}
                 bodyData={latestMeetings.body}
                 renderBody={(item, index) => renderMeetingsBody(item, index)}
               />
+            */ }
             </div>
             <div className="card__footer">
               <Link to="/">View all</Link>
