@@ -10,17 +10,7 @@ import ThemeAction from "../../Redux/Actions/ThemeAction";
 const Layout = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer);
 
-<<<<<<< HEAD
-  const themeReducer = useSelector(state => state.ThemeReducer)
-
-  const dispatch = useDispatch()
-
-  useEffect(() =>{
-    const themeClass = localStorage.getItem('themeMode' , 'theme-mode-light');
-    const colorClass = localStorage.getItem('colorMode' , 'theme-mode-light');
-=======
   const dispatch = useDispatch();
->>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
 
   useEffect(() => {
     const themeClass = localStorage.getItem("themeMode", "theme-mode-light");

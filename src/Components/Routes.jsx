@@ -5,14 +5,10 @@ import Customers from "../Pages/Customers";
 import Meetings from "../Pages/Meetings";
 import Doctors from "../Pages/Doctors";
 import Hospitals from "../Pages/Hospital";
-<<<<<<< HEAD
-import AddCustomer from '../Pages/Add-Customer'
+import AddCustomer from "../Pages/Add-Customer";
 import Edit_Customer from "../Pages/Edit_Customer";
-import Grid from "./Table/Grid";
 import AddMeeting from "../Pages/Add-Meeting";
-=======
 import Archive from "./Archive/Archive";
->>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
 
 const Routes = () => {
   return (
@@ -22,14 +18,11 @@ const Routes = () => {
       <Route path="/sidi-hia/Meetings" component={Meetings} />
       <Route path="/sidi-hia/doctors" component={Doctors} />
       <Route path="/sidi-hia/hospitals" component={Hospitals} />
-<<<<<<< HEAD
       <Route path="/add-customer" component={AddCustomer} />
       <Route path="/add-meeting" component={AddMeeting} />
-      <Route path = "/edit-customer/:cin" component = {Edit_Customer} />
-      <Route path = "/grid" component = {Grid} />
-=======
+      <Route path="/edit-customer/:cin" component={Edit_Customer} />
+
       <Route path="/sidi-hia/archive" component={Archive} />
->>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
     </Switch>
   );
 };

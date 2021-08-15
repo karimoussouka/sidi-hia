@@ -190,7 +190,7 @@ const Dashboard = () => {
   // });
   return (
     <div>
-      <h2 className="pag-header">Dahsboard</h2>
+      <h2 className="page-header">Dahsboard</h2>
       <div className="row">
         <div className="col-6">
           <div className="row">
@@ -232,17 +232,16 @@ const Dashboard = () => {
               <h3>Top Customers</h3>
             </div>
             <div className="card__body">
-
-            <table>
-              <th>N°</th>
-              <th>Customer</th>
-              <th>Total visites</th>
-              <th>Last visite</th>
-              <tr>
-                <td></td>
-              </tr>
-            </table>
-            {/*  <Table
+              <table>
+                <th>N°</th>
+                <th>Customer</th>
+                <th>Total visites</th>
+                <th>Last visite</th>
+                <tr>
+                  <td></td>
+                </tr>
+              </table>
+              {/*  <Table
                 headData={topCustomersHead.head}
                 renderHead={(item, index) => renderCostumersHead(item, index)}
                 bodyData={topCustomers.body}
@@ -261,20 +260,19 @@ const Dashboard = () => {
               <h3>Latest Meetings</h3>
             </div>
             <div className="card__body">
-            <table>
-              <th>N°</th>
-              <th>Customer</th>
-              <th>Total visites</th>
-              <th>Last visite</th>
-              
-            </table>
-            { /*  <Table
+              <table>
+                <th>N°</th>
+                <th>Customer</th>
+                <th>Total visites</th>
+                <th>Last visite</th>
+              </table>
+              {/*  <Table
                 headData={latestMeetings.head}
                 renderHead={(item, index) => renderMeetingsHead(item, index)}
                 bodyData={latestMeetings.body}
                 renderBody={(item, index) => renderMeetingsBody(item, index)}
               />
-            */ }
+            */}
             </div>
             <div className="card__footer">
               <Link to="/">View all</Link>

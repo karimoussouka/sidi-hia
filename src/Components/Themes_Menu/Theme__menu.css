@@ -1,26 +1,18 @@
-<<<<<<< HEAD
-
-.theme-menu{
+.theme-menu {
     position: absolute;
     right: -300px;
-    display: none;
     top: 0;
-=======
-/* *:not(.badge) {
-    overflow: hidden;
-} */
+}
 
 .theme-menu {
     background-color: red;
     position: absolute;
     top: -1100px;
->>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
     width: 300px;
     right: 30px;
     z-index: 999;
     height: max-content;
     padding: 20px;
-    /* overflow: hidden; */
     background-color: var(--main-bg);
     box-shadow: var(--box-shadow);
     transition: top 1s var(--transition-cubic);
@@ -28,13 +20,10 @@
 }
 
 .theme-menu.active {
-<<<<<<< HEAD
-    right : 0;
+    right: 0;
     display: inline-block;
-=======
     top: 85px;
     right: 30px;
->>>>>>> f5333be988029f2c406921b81fdcaeda67c1e55a
 }
 
 .theme-menu__close {
