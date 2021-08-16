@@ -8,6 +8,9 @@ import user_image from "../../Assets/images/tuat.jpg";
 
 import user_menu from "../../Assets/JsonData/user_menus.json";
 import Theme__menu from "../Themes_Menu/Theme__menu";
+import {useHistory} from 'react-router-dom';
+import axios from 'axios';
+import swal from 'sweetalert';
 
 const renderNotiicationItem = (item, index) => (
   <div className="notifications-item" key={index}>
@@ -33,11 +36,32 @@ const renderUserMenu = (item, index) => (
   <Link to="./" key={index}>
     <div className="notifications-item">
       {<i className={item.icon}></i>}
-      <span> {item.content}</span>
+      <span>Logout</span>
     </div>
   </Link>
 );
+
+
+
 const TopNav = () => {
+
+  const history = useHistory();
+  const logoutSubmit = (e) => {
+      e.preventDefault();
+      
+      axios.post('/api/logout').then(res =>{
+          if(res.data.status === 200)
+          {
+              localStorage.removeItem('auth_token',res.data.token);
+              localStorage.removeItem('auth_name',res.data.name);
+              swal("Success",res.data.message,"success");
+              history.push('/');
+              document.location.reload();
+          }
+      })
+  }
+
+
   return (
     <div className="topnav">
       <div className="topnavp__search">
@@ -45,6 +69,9 @@ const TopNav = () => {
       </div>
 
       <div className="topnav__right">
+      <div className="topnav__right-item">
+          <i onClick={logoutSubmit} className="bx bx-log-out-circle bx-rotate-180"></i>
+      </div>
         <div className="topnav__right-item">
           <DropDown
             customToggle={() => renderUserToggle(curr_user)}

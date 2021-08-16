@@ -10,20 +10,26 @@ import Edit_Customer from "../Pages/Edit_Customer";
 import AddMeeting from "../Pages/Add-Meeting";
 import Archive from "./Archive/Archive";
 
+
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/sidi-hia" exact component={Dashboard} />
-      <Route path="/sidi-hia/Customers" component={Customers} />
-      <Route path="/sidi-hia/Meetings" component={Meetings} />
-      <Route path="/sidi-hia/doctors" component={Doctors} />
-      <Route path="/sidi-hia/hospitals" component={Hospitals} />
+      <Route path="/" exact component={Dashboard} />
+      <Route path="/Customers" component={Customers} />
+      <Route path="/Meetings" component={Meetings} />
+      <Route path="/doctors" component={Doctors} />
+      <Route path="/hospitals" component={Hospitals} />
       <Route path="/add-customer" component={AddCustomer} />
       <Route path="/add-meeting" component={AddMeeting} />
       <Route path="/edit-customer/:cin" component={Edit_Customer} />
+      <Route path="/archive" component={Archive} />
 
-      <Route path="/sidi-hia/archive" component={Archive} />
+      
+
     </Switch>
+
+    
+
   );
 };
 

@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./style.css";
 import Table from "../Components/Table/Table";
 import customerList from "../Assets/JsonData/customers-list.json";
 import { Link } from "react-router-dom";
 import Add from "../Components/AddBtn/Add";
 import "../Components/Table/Table.css";
+import {DataContext} from '../Context/ContextApi';
 
 const customerTableHead = [
   "N°",
   "cin",
   "name",
-  "email",
   "phone",
   "location",
-  "last Visite",
   "action",
 ];
 
 const Customers = () => {
   const [search, setSearch] = useState([]);
 
+  const {customers} = useContext(DataContext);
   return (
     <div>
       <div className="page-header">
@@ -50,7 +50,7 @@ const Customers = () => {
                     </tr>
                   </thead>
                   <tbody className="tb-body">
-                    {customerList
+                    {customers
                       .filter((val) => {
                         if (search == "") {
                           return val;
@@ -62,14 +62,12 @@ const Customers = () => {
                       })
                       .map((custom) => {
                         return (
-                          <tr key={custom.number}>
-                            <td>{custom.number}</td>
+                          <tr key={custom.id}>
+                            <td>{custom.id}</td>
                             <td>{custom.cin}</td>
-                            <td>{custom.name}</td>
-                            <td>{custom.email}</td>
+                            <td>{custom.full_name}</td>
                             <td>{custom.phone}</td>
-                            <td>{custom.location}</td>
-                            <td>{custom.lastVisite}</td>
+                            <td>{custom.adress}</td>
                             <td>
                               <i
                                 className="bx bx-trash"

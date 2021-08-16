@@ -1,46 +1,46 @@
 [{
         "display_name": "Dashboard",
-        "route": "/sidi-hia",
+        "route": "/",
         "icon": "bx bx-category-alt"
     },
     {
         "display_name": "Customers",
-        "route": "/sidi-hia/customers",
+        "route": "/customers",
         "icon": "bx bx-user-pin"
     },
     {
         "display_name": "Meetings",
-        "route": "/sidi-hia/meetings",
+        "route": "/meetings",
         "icon": "bx bx-conversation"
     },
     {
         "display_name": "Doctors",
-        "route": "/sidi-hia/doctors",
+        "route": "/doctors",
         "icon": "bx bx-cart"
     },
     {
         "display_name": "Hospitals",
-        "route": "/sidi-hia/hospitals",
+        "route": "/hospitals",
         "icon": "bx bx-clinic"
     },
     {
         "display_name": "Analytics",
-        "route": "/sidi-hia/analytics",
+        "route": "/analytics",
         "icon": "bx bx-bar-chart-alt"
     },
     {
         "display_name": "Archives",
-        "route": "/sidi-hia/archive",
+        "route": "/archive",
         "icon": "bx bx-archive"
     },
     {
         "display_name": "discount",
-        "route": "/sidi-hia/discount",
+        "route": "/discount",
         "icon": "bx bx-gift"
     },
     {
         "display_name": "settings",
-        "route": "/sidi-hia/settings",
+        "route": "/settings",
         "icon": "bx bx-cog"
     }
 ]
