@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 export default function AddCustomer() {
+
+  document.title = "Add customer";
   const {
     register,
     handleSubmit,
@@ -15,7 +17,7 @@ export default function AddCustomer() {
 
   return (
     <div>
-      <Link to="/sidi-hia/customers">
+      <Link to="/customers">
         <i className="bx bx-arrow-back back"></i>
       </Link>
       <div className="add_cus">

@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 
 const store = createStore(rootReducer);
 document.title = "Skill Team";
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

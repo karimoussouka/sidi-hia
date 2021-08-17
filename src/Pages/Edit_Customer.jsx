@@ -40,7 +40,7 @@ const Edit_Customer = (props) => {
       {List.map((item) => {
         return (
           <div>
-            <Link to="/sidi-hia/customers">
+            <Link to="/customers">
               <i className="bx bx-arrow-back back"></i>
             </Link>
             <div className="add_cus">

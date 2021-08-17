@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React, {  useContext } from "react";
 import { Link } from "react-router-dom";
 import Chart from "react-apexcharts";
-import Themeaction from "../Redux/Actions/ThemeAction";
 
 import { useSelector, useDispatch } from "react-redux";
 
 import StatusCard from "../Components/Status-card/StatusCard";
 import statusCards from "../Assets/JsonData/status-card-data.json";
-import Table from "../Components/Table/Table";
 import Badge from "../Components/Badge/Badge";
 
 const chartOptions = {
@@ -182,6 +180,9 @@ const renderMeetingsBody = (item, index) => (
 
 const Dashboard = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer.mode);
+  document.title = "Skill Team";
+
+
 
   // const dispatch = useDispatch();
 
@@ -190,7 +191,7 @@ const Dashboard = () => {
   // });
   return (
     <div>
-      <h2 className="page-header">Dahsboard</h2>
+      <h2 className="page-header">Dashbord</h2>
       <div className="row">
         <div className="col-6">
           <div className="row">

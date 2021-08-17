@@ -10,14 +10,20 @@
     border-top: 1px solid gray;
     position: absolute;
     top: 320px;
-    width: 300px;
-    background-color: #fff;
+    width: 400px;
+    background-color: rgb(4, 0, 0);
     box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+*::-webkit-scrollbar{
+    width: 0;
 }
 
 .listSuggestion li {
     padding: 10px 5px ;
     cursor: pointer;
+    color:#fff;
 }
 .listSuggestion li:hover{
     text-decoration: underline;
@@ -108,4 +114,5 @@
  }
  .topnavp__search{
      position: relative;
+     margin-bottom: 10px;
  }

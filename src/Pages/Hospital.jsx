@@ -23,6 +23,8 @@ const meetingsStatus = {
 };
 
 const Customers = () => {
+
+  document.title = "Hospital";
   return (
     <div>
       <div className="page-header">

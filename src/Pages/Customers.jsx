@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import "./style.css";
 import Table from "../Components/Table/Table";
 import customerList from "../Assets/JsonData/customers-list.json";
 import { Link } from "react-router-dom";
 import Add from "../Components/AddBtn/Add";
 import "../Components/Table/Table.css";
+
 
 const customerTableHead = [
   "N°",
@@ -18,6 +19,8 @@ const customerTableHead = [
 ];
 
 const Customers = () => {
+  
+  document.title = "Customers";
   const [search, setSearch] = useState([]);
 
   return (

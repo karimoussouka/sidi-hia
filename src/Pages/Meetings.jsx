@@ -4,7 +4,6 @@ import Table from "../Components/Table/Table";
 import meetingsList from "../Assets/JsonData/meetings-list.json";
 import Badge from "../Components/Badge/Badge";
 import { Link } from "react-router-dom";
-import { useFormState } from "react-hook-form";
 import Add from "../Components/AddBtn/Add";
 
 const customerTableHead = [
@@ -16,26 +15,6 @@ const customerTableHead = [
   "Time",
   "Status",
 ];
-const renderHead = (item, index) => <th key={index}>{item}</th>;
-const renderBody = (item, index) => (
-  <tr key={index}>
-    <td>{item.number}</td>
-    <td>{item.customer}</td>
-    <td>{item.doctor}</td>
-    <td>{item.hospital}</td>
-    <td>{item.date}</td>
-    <td>{item.time}</td>
-    <td>
-      <Badge content={item.status} type={meetingsStatus[item.status]}></Badge>
-    </td>
-    <td>
-      <i className="bx bx-trash" style={{ marginRight: "5px" }}></i>
-      <Link to={"/edit-customer/" + item.cin}>
-        <i className="bx bx-pencil"></i>
-      </Link>
-    </td>
-  </tr>
-);
 
 const meetingsStatus = {
   Pending: "primary",
@@ -43,7 +22,8 @@ const meetingsStatus = {
   Now: "success",
 };
 
-const Customers = () => {
+const Meetings = () => {
+  document.title = "Meetings";
   const [search, setSearch] = useState([]);
   return (
     <div>
@@ -111,13 +91,7 @@ const Customers = () => {
                             ></i>
                             <Link
                               to={
-                                "/edit-customer/" +
-                                meeting.customer +
-                                meeting.doctor +
-                                meeting.doctor +
-                                meeting.hospital +
-                                meeting.date +
-                                meeting.time
+                                 "/edit-meeting/" + meeting.customer
                               }
                             >
                               <i className="bx bx-pencil"></i>
@@ -128,13 +102,6 @@ const Customers = () => {
                     })}
                 </tbody>
               </table>
-              {/*  <Table
-                limit="10"
-                headData={customerTableHead}
-                renderHead={(item, index) => renderHead(item, index)}
-                bodyData={meetingsList}
-                renderBody={(item, index) => renderBody(item, index)}
-            /> */}
             </div>
           </div>
         </div>
@@ -143,4 +110,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Meetings;

@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ThemeAction from "../../Redux/Actions/ThemeAction";
 
+
 const Layout = () => {
   const themeReducer = useSelector((state) => state.ThemeReducer);
 
@@ -22,21 +23,22 @@ const Layout = () => {
   }, [dispatch]);
 
   return (
-    <BrowserRouter>
-      <Route
-        render={(props) => (
-          <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
-            <SideBar {...props} />
-            <div className="layout_content">
-              <TopNav />
-              <div className="layout_content-main">
-                <Routes />
+
+        <BrowserRouter>
+          <Route
+            render={(props) => (
+              <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
+                <SideBar {...props} />
+                <div className="layout_content">
+                  <TopNav />
+                  <div className="layout_content-main">
+                    <Routes />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
-      />
-    </BrowserRouter>
+            )}
+          />
+        </BrowserRouter>
   );
 };
 

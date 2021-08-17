@@ -7,6 +7,7 @@ import hospitalsList from "../Assets/JsonData/hospitals-list.json";
 import { useState } from "react";
 
 export default function AddMeeting() {
+  document.title = "Add meeting";
   const {
     register,
     handleSubmit,
@@ -17,12 +18,29 @@ export default function AddMeeting() {
   const [suggestionDoctor, setSuggestionDoctor] = useState([]);
   const [suggestionHospital, setSuggestioHospital] = useState([]);
 
+  const [customerValue , setCustomerValue] = useState('')
+  const [doctorValue , setDoctorValue] = useState('')
+  const [hospitalValue , setHospitalValue] = useState('')
+
   async function Submit(data) {
     await console.log(data);
   }
+
+  const customersuggestionSelected = value => {
+    setCustomerValue(value)
+    setSuggestionCustomer([])
+  }
+  const doctorsuggestionSelected = value => {
+    setDoctorValue(value)
+    setSuggestionDoctor([])
+  }
+  const hospitalsuggestionSelected = value => {
+    setHospitalValue(value)
+    setSuggestioHospital([])
+  }
   return (
     <div>
-      <Link to="/sidi-hia/meetings">
+      <Link to="/meetings">
         <i className="bx bx-arrow-back back"></i>
       </Link>
       <div className="add_cus">
@@ -31,6 +49,7 @@ export default function AddMeeting() {
           <div className="Item">
             <label htmlFor="">Customer :</label>
             <input
+              value = {customerValue}
               type="text"
               placeholder="name of customer"
               required
@@ -38,6 +57,7 @@ export default function AddMeeting() {
               {...register("Customer", { required: true, maxLength: 8 })}
               onChange={(e) => {
                 setSuggestionCustomer(e.target.value);
+                setCustomerValue(e.target.value);
               }}
             />
             {errors.Customer && errors.Customer.type === "maxLength" && (
@@ -62,7 +82,7 @@ export default function AddMeeting() {
                   }
                 })
                 .map((item) => {
-                  return <li>{item.name}</li>;
+                  return <li onClick = {() => customersuggestionSelected(item.name)}>{item.name}</li>;
                 })}
             </ul>
           </div>
@@ -70,12 +90,14 @@ export default function AddMeeting() {
             <label htmlFor="">Doctor :</label>
             <input
               type="text"
+              value = {doctorValue}
               placeholder="name of doctor"
               autoComplete="off"
               required
               {...register("Doctor", { required: true, maxLength: 30 })}
               onChange={(e) => {
                 setSuggestionDoctor(e.target.value);
+                setDoctorValue(e.target.value);
               }}
             />
             {errors.Doctor && errors.Doctor.type === "maxLength" && (
@@ -99,18 +121,20 @@ export default function AddMeeting() {
                   }
                 })
                 .map((item) => {
-                  return <li>{item.name}</li>;
+                  return <li onClick = {() => doctorsuggestionSelected(item.name)}>{item.name}</li>;
                 })}
             </ul>
           </div>
           <div className="Item">
             <label htmlFor="">Hospital :</label>
             <input
+              value = {hospitalValue}
               type="text"
               placeholder="name of hospital"
               {...register("Hospital", { required: true, maxLength: 30 })}
               onChange={(e) => {
                 setSuggestioHospital(e.target.value);
+                setHospitalValue(e.target.value)
               }}
             />
             {errors.Hospital && errors.Hospital.type === "maxLength" && (
@@ -134,7 +158,7 @@ export default function AddMeeting() {
                   }
                 })
                 .map((item) => {
-                  return <li>{item.name}</li>;
+                  return <li onClick = {() => hospitalsuggestionSelected(item.name)}>{item.name}</li>;
                 })}
             </ul>
           </div>
