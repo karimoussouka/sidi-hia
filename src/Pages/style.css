@@ -104,6 +104,10 @@
         margin-top: 30px;
         cursor: pointer;
     }
+    .top{
+        display:flex;
+        justify-content: space-between;
+      }
 
  #searchBy{
      position: absolute;

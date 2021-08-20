@@ -1,12 +1,13 @@
 
 import React, { useState , useContext } from "react";
 import "./style.css";
-import Table from "../Components/Table/Table";
 import customerList from "../Assets/JsonData/customers-list.json";
 import { Link } from "react-router-dom";
-import Add from "../Components/AddBtn/Add";
 import "../Components/Table/Table.css";
 import {DataContext} from '../Context/ContextApi';
+import Swal from 'sweetalert2'
+
+
 
 
 const customerTableHead = [
@@ -15,20 +16,45 @@ const customerTableHead = [
   "name",
   "phone",
   "location",
-  "action",
+  "save",
 ];
 
-const Customers = () => {
+const Archived_Customers = () => {
+
+  const xx = (customer) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `You want to restore ${customer}!`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, restore him (her)!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Saved!',
+          `${customer} has been restored`,
+          'success'
+        )
+      }
+    })
+  }
   
-  document.title = "Customers";
+  document.title = "Archived Customers";
   const [search, setSearch] = useState([]);
 
   const {customers} = useContext(DataContext);
   return (
     <div>
-      <div className="page-header">
-        <h2>Customers</h2>
-        <Add link="/add-customer" />
+      <div className = "top">
+          <Link to="/archive">
+            <i className="bx bx-arrow-back archive "></i>
+          </Link>
+          <div className="page-header">
+            <h2>Archived Customers</h2>
+            
+          </div>
       </div>
 
       <div className="topnavp__search">
@@ -54,7 +80,7 @@ const Customers = () => {
                     </tr>
                   </thead>
                   <tbody className="tb-body">
-                    {customers
+                    {customerList
                       .filter((val) => {
                         if (search == "") {
                           return val;
@@ -66,21 +92,17 @@ const Customers = () => {
                       })
                       .map((custom) => {
                         return (
-                          <tr key={custom.id}>
-                            <td>{custom.id}</td>
+                          <tr key={custom.number}>
+                            <td>{custom.number}</td>
                             <td>{custom.cin}</td>
-                            <td>{custom.full_name}</td>
+                            <td>{custom.name}</td>
                             <td>{custom.phone}</td>
-                            <td>{custom.adress}</td>
+                            <td>{custom.location}</td>
                             <td>
-                              <i
-                                className="bx bx-trash"
-                                style={{ marginRight: "5px" }}
-                              ></i>
-                              <Link to={"/edit-customer/" + custom.cin}>
-                                <i className="bx bx-pencil"></i>
-                              </Link>
-                            </td>
+                              <i className="bx bx-save" onClick = {() => {xx(custom.name)}} style={{ cursor: "pointer"}} >
+                              </i>
+                            </td> 
+                           
                           </tr>
                         );
                       })}
@@ -95,4 +117,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Archived_Customers;

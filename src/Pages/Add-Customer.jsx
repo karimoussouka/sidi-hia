@@ -1,6 +1,7 @@
 import "./style.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function AddCustomer() {
 
@@ -12,7 +13,9 @@ export default function AddCustomer() {
   } = useForm();
 
   async function Submit(data) {
-    await console.log(data);
+     console.log(data);
+      await axios.post("http://localhost:8080/Facebook-data/Controllers/API/add.php",data).then(result => console.log(result.data))
+    
   }
 
   return (

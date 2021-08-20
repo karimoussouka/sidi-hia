@@ -44,7 +44,7 @@ const Edit_Customer = (props) => {
               <i className="bx bx-arrow-back back"></i>
             </Link>
             <div className="add_cus">
-              <h1 className="titel">{item.name}</h1>
+              <h1 className="titel">{item.full_name}</h1>
               <form
                 action=""
                 className="newCustomer"

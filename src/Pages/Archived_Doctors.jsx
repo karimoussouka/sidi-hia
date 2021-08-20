@@ -1,43 +1,61 @@
 import React, { useState } from "react";
 import "./style.css";
 import dcotorsList from "../Assets/JsonData/doctors-list.json";
-import Add from '../Components/AddBtn/Add'
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const customerTableHead = [
-  "N°",
-  "CIn",
-  "Nane",
-  "Speciality",
-  "Hospital",
-  "Email",
-  "Phone",
-];
-const renderHead = (item, index) => <th key={index}>{item}</th>;
-const renderBody = (item, index) => (
-  <tr key={index}>
-    <td>{item.number}</td>
-    <td>{item.cin}</td>
-    <td>{item.name}</td>
-    <td>{item.specialite}</td>
-    <td>{item.hospital}</td>
-    <td>{item.email}</td>
-    <td>{item.phone}</td>
-  </tr>
-);
+    "N°",
+    "CIN",
+    "Name",
+    "Speciality",
+    "Hospital",
+    "Email",
+    "Phone",
+    "Restore"
+  ];
 
-const Doctors = () => {
 
-  document.title = "Doctors";
+
+const Archived_Doctors = () => {
+
+    const xx = (doctor) => {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: `You want to restore the doctor  ${doctor}!`,
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, restore it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+
+            
+
+            Swal.fire(
+              'Saved!',
+              `The doctor ${doctor} has been restored`,
+              'success'
+            )
+          }
+        })
+      }
+
+  document.title = "Archived Doctors";
   const [search, setSearch] = useState([]);
   return (
     <div>
-      <div className="page-header">
-        <h2>Doctors</h2>
-        <Add link="/add-doctor" />
-      </div>
+        <div className = "top">
+            <Link to="/archive">
+                <i className="bx bx-arrow-back archive "></i>
+            </Link>
+            <div className="page-header">
+                <h2>Archived Doctors</h2>
+            </div>
+        </div>
 
-      <div className="topnavp__search">
+        <div className="topnavp__search">
         <input
           type="text"
           placeholder="EE XX XX XX"
@@ -84,21 +102,10 @@ const Doctors = () => {
                         <td>{item.hospital}</td>
                         <td>{item.email}</td>
                         <td>{item.phone}</td>
-                          <td>
-                          </td>
-                          <td>
-                            <i
-                              className="bx bx-trash"
-                              style={{ marginRight: "5px" }}
-                            ></i>
-                            <Link
-                              to={
-                                 "/edit-doctor/" + item.cin
-                              }
-                            >
-                              <i className="bx bx-pencil"></i>
-                            </Link>
-                          </td>
+                        <td>
+                        <i className="bx bx-save" onClick = {() => {xx(item.name)}} style={{ cursor: "pointer"}} >
+                        </i>
+                      </td> 
                         </tr>
                       );
                     })}
@@ -112,4 +119,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default Archived_Doctors;
